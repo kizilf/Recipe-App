@@ -1,0 +1,22 @@
+{
+  "name": "recipe-app",
+  "version": "1.0.0",
+  "description": "DMS Code Challange",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kizilf/Recipe-App.git"
+  },
+  "author": "Furkan KIZILTAN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kizilf/Recipe-App/issues"
+  },
+  "homepage": "https://github.com/kizilf/Recipe-App#readme",
+  "dependencies": {
+    "mongodb": "^4.1.4"
+  }
+}
