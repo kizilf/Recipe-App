@@ -23,7 +23,6 @@
     "pug": "^3.0.2"
   },
   "devDependencies": {
-    "browser-sync": "^2.27.7",
     "nodemon": "^2.0.15"
   }
 }
