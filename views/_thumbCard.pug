@@ -6,16 +6,23 @@ mixin thumbCard(recipe)
       object-fit: cover;
     }
 
+    .textLikeButton {
+        background: none!important;
+        border: none;
+        padding: 0!important;
+    }
+
+  
   .col-md-4.d-flex.align-items-stretch
     .card.mb-4.shadow-sm.bg-dark
       card-img-top
       img(src=recipe.url)
       .card-body
         .card-text
-        strong.text-light #{recipe.title}
-        .d-flex.justify-content-between.align-items-center
-          .btn-group
-            button.btn.btn-sm.btn-light Details
+          form.inline(method='post' action='/recipeDetails')
+            button.link-button.textLikeButton(id="patates" type='submit' name='submit_param' value=recipe._id)
+              strong.text-light #{recipe.title}
+
 
 mixin addCard()
   style.
@@ -26,13 +33,10 @@ mixin addCard()
     }
 
   .col-md-4.d-flex.align-items-stretch
-    .card.mb-4.shadow-sm.bg-dark
-      card-img-top
+    .card.mb-4.shadow-sm.bg-dark 
+      card-img-top 
       img(src="https://thumbs.dreamstime.com/b/plus-sign-icon-positive-symbol-zoom-vector-illustration-isolated-white-background-138387553.jpg")
       .card-body
         .card-text
-        strong.text-light Share yours!
-        .d-flex.justify-content-between.align-items-center
-          .btn-group
-            button.btn.btn-sm.btn-light 
-              a(href="/addRecipe").text-dark Add
+         a(href='/addRecipe')
+          strong.text-light Share yours!

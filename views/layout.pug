@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Pug
+    title RecipeApp
     link(rel='stylesheet' href='https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css')
     style.
       footer {
@@ -16,20 +16,26 @@ html
       footer p {
         margin-bottom: .25rem;
       }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
+      .jumbotron{
+        margin:15px 30px 0px 30px;
+        border-radius:10px;
+          background: 
+        linear-gradient(
+          rgba(0, 0, 0, 0.7), 
+          rgba(0, 0, 0, 0.6)
+        ),
+        url(https://tinyurl.com/cpvr7ynx);
+        background-repeat: no-repeat;
+        background-position: center;
+        color:white !important;
+        height:340px;
       }
 
   body
     main#main
-      include jumbotron.pug
-
       block content
 
-    include footer.pug
+  include footer.pug
     
     script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js')
     script(src='https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js')

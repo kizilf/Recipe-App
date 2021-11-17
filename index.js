@@ -33,6 +33,12 @@ app.get("/", async (req, res) => {
     res.status(200);  
 });
 
+app.post("/recipeDetails", async (req, res) => {
+    await dbOperator.connectToDB();
+    const recipe = await dbOperator.getRecipeById(req.body.submit_param);
+    res.render("recipeDetails", {recipe: recipe});  
+});
+
 app.post("/addRecipe", async (req, res) => {
     //console.log(req.body);
     await dbOperator.addANewRecipe(req.body);

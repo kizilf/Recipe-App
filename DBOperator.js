@@ -1,4 +1,4 @@
-const { MongoClient } = require('mongodb');
+const { MongoClient, ObjectId } = require('mongodb');
 
 const uri = "mongodb+srv://dbUser:securePass@recipedb.bapek.mongodb.net/RecipeDB?retryWrites=true&w=majority";
 
@@ -19,8 +19,13 @@ class DBOperator {
         }
     }
 
+    async getRecipeById(id){
+        const result = await this.client.db("recipesDB").collection("recipes").findOne({"_id": ObjectId(id)});
+        return result;
+    }
+
     async getAllRecipies(){
-        const cursor = this.client.db("recipesDB").collection("recipes").find({});
+        const cursor = await this.client.db("recipesDB").collection("recipes").find({});
         // Store the results in an array
         const results = await cursor.toArray();
         return results;
