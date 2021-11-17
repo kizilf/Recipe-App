@@ -1,0 +1,73 @@
+//- Including Label mixins
+include ../node_modules/jade-bootstrap/components/labels
+//- Including Panel mixins
+include ../node_modules/jade-bootstrap/components/panels
+//- Including Tab mixins
+include ../node_modules/jade-bootstrap/components/tabs
+//- Including Dropdown mixins
+include ../node_modules/jade-bootstrap/components/dropdowns
+//- Including Form control mixins
+include ../node_modules/jade-bootstrap/components/forms
+//- Including Modal dialog mixins
+include ../node_modules/jade-bootstrap/components/modal
+//- Including List group mixins
+include ../node_modules/jade-bootstrap/components/list-groups
+//- Including Progress bar mixins
+include ../node_modules/jade-bootstrap/components/progress-bars
+//- Including Button mixins
+include ../node_modules/jade-bootstrap/components/buttons
+//- Including Image mixins
+include ../node_modules/jade-bootstrap/components/images
+//- Including Bootswatch theme mixins
+include ../node_modules/jade-bootstrap/components/bootswatch
+
+doctype html
+html
+  head
+    title Pug
+    link(rel='stylesheet' href='https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css')
+    style.
+      footer {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        position: fixed;
+      }
+
+      footer p {
+        margin-bottom: .25rem;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+  body
+    include header.pug 
+    .container
+        form(action="/addRecipe", method="post")
+            .form-group
+                label(for=title)
+                input.form-control(type="text" placeholder="title" required='' name="Title")
+            .form-group
+                label.text-light List of Ingridients
+                textarea#exampleFormControlTextarea1.form-control(type="text" rows='3' placeholder='List of Ingridients' required='' name="ingredients")
+            .form-group
+                label.text-light Preperation Steps
+                textarea#exampleFormControlTextarea1.form-control(type="text" rows='3' placeholder='Preperation Steps' required='' name="steps")
+            .form-group
+                label(for=url)
+                input.form-control(type="text",placeholder="Image URL" required='' name="url")
+            .form-group
+                button.btn.btn-dark(type="submit",id=recipeSubmitBtn)= "Add the recipe"
+    
+
+    script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js')
+    script(src='https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js')
+
+
+
